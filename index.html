@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="background-color: silver;">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <title>Anthony Farias - RGM: 26619474</title>
+    </head>
+    <body>
+        <!-- Ao clicar no botão, será enviado
+        para o servidor (action) por método get
+        uma variável chamada 'nome' com o valor
+        digitado pelo usuário.
+    -->
+    <div style="font-family:Audiowide, sans-serif; border: 4px solid black;border-radius: 5px; padding:10px; width:13%; margin-left:42%; margin-top:5%; background-color:bisque">
+        <form action="http://127.0.0.1:4000" method="get">
+            Digite seu nome:<input name="nome"><br>
+            Digite um número:<input name="numA"><br>
+            Digite um número:<input name="numB"><br>
+            <hr>
+            <h1>Escolha uma operação:</h1>
+            <div><input type="radio" name="soma">Somar</div>
+            <div><input type="radio" name="mult">Multiplicar</div>
+            <div><input type="radio" name="sub">Subtrair</div>
+            <div><input type="radio" name="div">Dividir</div><br>
+            <button style="border: 2px groove black; margin-left:35%; border-radius:5px">Enviar</button>
+        </form>
+    </div>  
+    <script>
+        $(document).ready(function () {
+            $('input[type=radio]').change(function() {
+                $('input[type=radio]:checked').not(this).prop('checked', false);
+            });
+        });
+    </script>  
+    </body>
+</html>
